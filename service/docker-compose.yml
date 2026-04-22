@@ -1,0 +1,9 @@
+services:
+  frontend:
+    image: nginx
+    ports:
+      - "80:80"
+    environment:
+      - NGINX_PORT=80
+    volumes:
+      - "./frontend:/usr/share/nginx/html"
