@@ -9,3 +9,13 @@ services:
       - NGINX_PORT=80
     volumes:
       - "./frontend:/usr/share/nginx/html"
+      - "./nginx.conf:/etc/nginx/nginx.conf"
+
+  backend:
+    container_name: backend
+    restart: unless-stopped
+    build: "./backend/."
+    ports:
+      - "3000:3000"
+
+
